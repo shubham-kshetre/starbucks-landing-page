@@ -1,9 +1,9 @@
 pipeline {
     agent { docker { image 'python:3.10.7-alpine' } }
     stages {
-        stage('build') {
+        stage('pre-build') {
             steps {
-                echo 'Namaste, World!'
+                echo 'docker --version'
             }
         }
     }
