@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('pre-build') {
             steps {
-                sh 'echo ${PASSWORD} | docker login --user ${USERNAME} --password-stdin'
+                sh 'echo ${PASSWORD} | docker login --username ${USERNAME} --password-stdin'
             }
         }
 
