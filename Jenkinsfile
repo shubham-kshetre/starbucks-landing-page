@@ -17,15 +17,8 @@ pipeline {
             }
         }
         stage('build'){
-            // steps {
-            //     dir (starbucks-landing-page/) {
-            //         script {
-            //             sh 'docker build -t starbuck-webpage .'
-            //         }
-            //     }
-            // }
             steps {
-                sh 'ls -la'
+                sh 'docker build -t nginx-webpage .'
             }
         }
 
