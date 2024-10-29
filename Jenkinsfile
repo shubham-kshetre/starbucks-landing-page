@@ -17,12 +17,15 @@ pipeline {
             }
         }
         stage('build'){
+            // steps {
+            //     dir (starbucks-landing-page/) {
+            //         script {
+            //             sh 'docker build -t starbuck-webpage .'
+            //         }
+            //     }
+            // }
             steps {
-                dir (starbucks-landing-page/) {
-                    script {
-                        sh 'docker build -t starbuck-webpage .'
-                    }
-                }
+                sh 'ls -la'
             }
         }
 
