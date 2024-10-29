@@ -21,6 +21,12 @@ pipeline {
                 sh 'docker build -t nginx-webpage .'
             }
         }
+        stage('push'){
+            steps {
+                sh 'docker tag nginx-webpage:latest ${USERNAME}/starbucks-webpage:latest'
+                sh 'docker push ${USERNAME}/starbucks-webpage:latest'
+            }
+        }
 
     }
 }
