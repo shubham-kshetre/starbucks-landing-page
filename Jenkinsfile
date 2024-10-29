@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('pre-build') {
             steps {
-                echo "$DOCKER_USERNAME"
+                sh 'echo "$DOCKER_USERNAME"'
             }
             // steps {
             //     echo 'docker --version'
