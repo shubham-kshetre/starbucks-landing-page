@@ -6,6 +6,11 @@ pipeline {
         REGISTRY = credentials('DOCKER_REGISTRY')
     }
     stages {
+        stage('Checout') {
+            steps {
+             checkout scm       
+            }
+        }
         stage('pre-build') {
             steps {
                 sh 'echo ${PASSWORD} | docker login --username ${USERNAME} --password-stdin'
