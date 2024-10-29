@@ -16,6 +16,15 @@ pipeline {
                 sh 'echo ${PASSWORD} | docker login --username ${USERNAME} --password-stdin'
             }
         }
+        stage('build'){
+            steps {
+                dir (starbucks-landing-page/) {
+                    script {
+                        sh 'docker build -t starbuck-webpage .'
+                    }
+                }
+            }
+        }
 
     }
 }
