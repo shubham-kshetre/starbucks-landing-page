@@ -3,15 +3,11 @@ pipeline {
     stages {
         stage('pre-build') {
             steps {
-                sh 'echo "$DOCKER_USERNAME"'
+                echo 'docker --version'
             }
-            // steps {
-            //     echo 'docker --version'
-            // }
-            // steps {
-            //     echo "$DOCKER_PASSWORD" | docker login "$DOCKER_REGISTRY" --username "$DOCKER_USERNAME" --password-stdin
-            // }
-            
+            steps {
+                echo "$DOCKER_PASSWORD" | docker login "$DOCKER_REGISTRY" --username "$DOCKER_USERNAME" --password-stdin
+            }
         }
     }
 }
