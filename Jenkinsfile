@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('pre-build') {
             steps {
-                sh 'docker run hello-world'
+                sh 'echo ${DOCKER_PASSWORD}'
             }
         }
 
