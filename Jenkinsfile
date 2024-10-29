@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('pre-build') {
             steps {
-                sh 'echo ${DOCKER_USERNAME}'
+                sh 'echo ${USERNAME}'
             }
         }
 
